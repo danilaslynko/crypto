@@ -45,6 +45,3 @@ target_link_libraries(al_gamal_sign crypto)
 
 add_executable(baby_step_giant_step baby_step_giant_step.c)
 target_link_libraries(baby_step_giant_step crypto)
-
-add_executable(index_calculus index_calculus.c)
-target_link_libraries(index_calculus crypto)

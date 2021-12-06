@@ -1,8 +1,5 @@
 #include <stdlib.h>
 #include <math.h>
-#include "gsl-2.7.1/linalg/gsl_linalg.h"
-#include "gsl-2.7.1/vector/gsl_vector.h"
-#include "gsl-2.7.1/matrix/gsl_matrix.h"
 
 #ifndef CRYPTO_C_CUSTOM_MATH_H
 #define CRYPTO_C_CUSTOM_MATH_H
@@ -116,26 +113,4 @@ unsigned long long int baby_step_giant_step(unsigned long long int a, unsigned l
     }
 
     return result;
-}
-
-typedef struct {
-    unsigned long long **data;
-    unsigned int rows;
-    unsigned int columns;
-} MATRIX;
-
-MATRIX *solve_gaussian_elimination(MATRIX *input) {
-    MATRIX *output = malloc(sizeof(*output));
-    output->rows = 1l;
-    output->columns = input->columns - 1l;
-    for (unsigned int i = 0; i < input->rows; i++) {
-        unsigned long long *row = input->data[i];
-        for (unsigned int j = 0; j < input->columns; j++) {
-            unsigned long long element_i_j = row[j];
-        }
-    }
-}
-
-unsigned long long index_calculus(unsigned long long int a, unsigned long long int b, unsigned long long int p) {
-
 }
